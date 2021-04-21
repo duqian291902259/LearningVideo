@@ -23,7 +23,7 @@ import java.util.concurrent.Executors
  *
  */
 class MultiOpenGLPlayerActivity: AppCompatActivity() {
-    private val path = Environment.getExternalStorageDirectory().absolutePath + "/mvtest_2.mp4"
+    private val path = Environment.getExternalStorageDirectory().absolutePath + "/mvtest2.mp4"
     private val path2 = Environment.getExternalStorageDirectory().absolutePath + "/mvtest.mp4"
 
     private val render = SimpleRender()

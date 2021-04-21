@@ -15,6 +15,7 @@ extern "C" {
     #include <libavformat/avformat.h>
     #include <libavfilter/avfilter.h>
     #include <libavcodec/jni.h>
+    using namespace std;
 
     JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
         av_jni_set_java_vm(vm, reserved);
@@ -132,8 +133,13 @@ extern "C" {
     }
 
     JNIEXPORT void JNICALL
-    Java_com_cxp_learningvideo_FFEncodeActivity_releaseEncoder(JNIEnv *env, jobject thiz, jint synthesizer) {
-        Synthesizer *s =  (Synthesizer *)synthesizer;
-        delete synthesizer;
+    Java_com_cxp_learningvideo_FFEncodeActivity_releaseEncoder(JNIEnv *env, jobject thiz,
+                                                               jint synthesizer) {
+        try {
+            Synthesizer *s = (Synthesizer *) synthesizer;
+            //delete synthesizer;
+        } catch (std::exception exception) {
+
+        }
     }
 }
